@@ -1,0 +1,276 @@
+:root {
+    --color-primary: #C93E22;
+    --color-primary-hover: #b03319;
+    --color-secondary: #1F4A3A;
+    --color-secondary-hover: #153429;
+    --color-bg: #F4F6F2;
+    --color-surface: #FFFFFF;
+    --color-text: #1C2321;
+    --color-text-muted: #626A66;
+    --color-border: #E2E6DF;
+    --color-accent-soft: #EAEFE8;
+    --font-headline: 'Bricolage Grotesque', -apple-system, sans-serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+    /* x1.5 der schriftgröße */
+    min-height: 100vh;
+}
+
+
+/*  Header */
+.c-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-surface);
+    min-height: 64px;
+    padding: 0.75rem 1rem;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.c-icon-ueberschrift {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+
+.icon {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.icon:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.ueberschrift {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    white-space: nowrap;
+}
+
+.ueberschrift,
+.text-ueberraschung {
+    font-weight: 700;
+    font-size: 150%;
+}
+
+.c-ueberraschung {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    color: var(--color-surface);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+.c-ueberraschung:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.icon-ueberraschung {
+    font-size: 1.2rem;
+}
+
+.text-ueberraschung {
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* main */
+
+.c-main {
+    height: 100vh;
+    padding: 20px;
+}
+
+.c-first-three {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.was {
+    font-size: max(1.3rem, 3.5vw);
+    font-weight: 800;
+    color: var(--color-secondary);
+    font-family: var(--font-body);
+}
+
+.slogan {
+    font-size: max(0.9rem, 1.8vw);
+    font-weight: 500;
+    color: var(--color-secondary);
+    font-family: var(--font-body);
+}
+
+.suche {
+    width: 100%;
+}
+
+.eingabe {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.eingabe input {
+    flex: 1;
+    min-width: 0;
+    max-width: 30%;
+    height: 26px;
+    border-radius: 30px;
+}
+
+.eingabe button {
+    flex-shrink: 0;
+    height: 26px;
+    padding: 0 16px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--color-secondary);
+    color: var(--color-surface);
+}
+
+.eingabe button:hover {
+    background-color: var(--color-secondary-hover);
+}
+
+.eingabe .btn1 {
+    width: 44px;
+    padding: 0;
+}
+
+.text-suchen {
+    margin-top: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.c-btn {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    width: 100%;
+    /* Flüssiges Wischen mit dem Finger auf dem Smartphone */
+    -webkit-overflow-scrolling: touch;
+}
+
+.food,
+.alle {
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 9999px;
+    border: 1px solid #E2E6DF;
+    background-color: #FFFFFF;
+    color: var(--color-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alle:hover {
+    background-color: var(--color-accent-soft);
+}
+
+.food:hover {
+    background-color: var(--color-accent-soft);
+}
+
+
+
+/* container gerichte*/
+.c-auswahl{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 16px;
+    width: 100%;
+}
+.box{
+    aspect-ratio: 1/1;
+    background-color: var(--color-surface);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.box-pic{
+    background-color: blue;
+    width: 100%;
+    height: 70%;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+.box-pic img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.box-name{
+    margin: 10px 10px 5px 10px;
+    
+}
+.box-name span{
+    background-color: red;
+    border-radius: 50px;
+    padding: 5px;
+}
+.box-details{
+    margin: 10px;
+    gap: 20px;
+}
+.box-details span{
+    background-color: #C93E22;
+    border-radius: 50px;
+    padding: 5px;
+}
+/* footer */
+
+.c-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-surface);
+    height: 10vh;
+    z-index: 49;
+    color: var(--color-secondary);
+}
