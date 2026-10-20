@@ -13,7 +13,9 @@
     --font-body: 'DM Sans', -apple-system, sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -30,6 +32,9 @@ body {
 
 
 /*  Header */
+a{
+    text-decoration: none;
+}
 .c-header {
     display: flex;
     flex-direction: row;
@@ -79,6 +84,9 @@ body {
     font-weight: 700;
     font-size: 150%;
 }
+.ueberschrift{
+    color: #153429;
+}
 
 .c-ueberraschung {
     display: flex;
@@ -111,7 +119,7 @@ body {
 /* main */
 
 .c-main {
-    height: 100vh;
+    height: auto;
     padding: 20px;
 }
 
@@ -233,7 +241,7 @@ body {
     flex-direction: column;
 }
 .box-pic{
-    background-color: blue;
+    background-color: rgb(255, 244, 232);
     width: 100%;
     height: 70%;
     border-radius: 15px 15px 0 0;

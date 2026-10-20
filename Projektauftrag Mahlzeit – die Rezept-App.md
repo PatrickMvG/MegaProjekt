@@ -25,14 +25,14 @@ So soll ein Abend mit eurer Website ablaufen. Jeder Schritt ist eine Funktion, d
 
 Alle Daten kommen von [TheMealDB](https://www.themealdb.com/api.php), einer kostenlosen Rezept-API. Ihr benutzt den Test-Schlüssel `1`, der für Entwicklung und Unterricht gedacht ist. Alle Adressen beginnen mit `https://www.themealdb.com/api/json/v1/1/`.
 
-| Wofür | Endpunkt | Liefert |
-| --- | --- | --- |
-| Suche nach Name | `search.php?s=Arrabiata` | komplette Gerichte |
-| Gerichte nach Anfangsbuchstabe | `search.php?f=a` | komplette Gerichte |
-| Ein Gericht per ID | `lookup.php?i=52772` | ein komplettes Gericht |
-| Zufallsgericht | `random.php` | ein komplettes Gericht |
-| Alle Kategorien | `categories.php` | Name, Bild und Beschreibung je Kategorie |
-| Nach Kategorie filtern | `filter.php?c=Seafood` | nur ID, Name und Bild |
+| Wofür                             | Endpunkt                  | Liefert |
+| ---                               | ---                       | --- |
+| Suche nach Name                   | `search.php?s=Arrabiata`  | komplette Gerichte |
+| Gerichte nach Anfangsbuchstabe    | `search.php?f=a`          | komplette Gerichte |
+| Ein Gericht per ID                | `lookup.php?i=52772`      | ein komplettes Gericht |
+| Zufallsgericht                    | `random.php`              | ein komplettes Gericht |
+| Alle Kategorien                   | `categories.php`          | Name, Bild und Beschreibung je Kategorie |
+| Nach Kategorie filtern            | `filter.php?c=Seafood`    | nur ID, Name und Bild |
 
 Drei Dinge solltet ihr wissen:
 

@@ -4,16 +4,18 @@ const containerAuswahl = document.querySelector(".c-auswahl")
 
 
 
-form.addEventListener("click", (event) => {
-    event.preventDefault()
-})
+if (window.location.pathname.endsWith("index.html")) {
+    // Falls auf index.html: Buttons & 25 Gerichte laden
+    loadMealsCategoriesButtons();
+    twentyFiveGerichte();
+}
 
 async function loadMealsCategoriesButtons() {
     try {
         const repsponse = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?c=list")
         const data = await repsponse.json()
         renderCategories(data.meals)
-    } catch (e) {
+    } catch (error) {
         console.error("Fehler beim Laden: ", error)
     }
 }
@@ -59,6 +61,7 @@ async function twentyFiveGerichte() {
         const nameSpan = document.createElement("span")
         const sorte = document.createElement("span")
         const herkunft = document.createElement("span")
+        const aTag = document.createElement("a")
         
         box.className = "box"
         newPic.className = "box-pic"
@@ -67,20 +70,22 @@ async function twentyFiveGerichte() {
         nameSpan.className = "name-span"
         sorte.className= "sorte"
         herkunft.className = "herkunft"
+        aTag.className = "link"
 
         bild.src = meal.strMealThumb
         bild.alt = meal.strMeal
         nameSpan.textContent = meal.strMeal
         sorte.textContent = meal.strCategory
         herkunft.textContent = meal.strCountry
+        aTag.href = `details.html?lookup.php?id=${gerichtDaten.meals[0].idMeal}`
 
         newPic.append(bild)
         newBoxName.append(nameSpan)
         newBoxDetails.append(sorte, herkunft)
         
         box.append(newPic, newBoxName, newBoxDetails)
-
-        containerAuswahl.append(box)
+        aTag.append(box)
+        containerAuswahl.append(aTag)
         
         console.log(`Index ${j} Key: ${aktuellerKey} wertnummer ${gerichtDaten.meals[0].strCategory}`);
     }
